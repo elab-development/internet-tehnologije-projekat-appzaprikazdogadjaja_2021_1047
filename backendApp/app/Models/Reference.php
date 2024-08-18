@@ -11,4 +11,9 @@ class Reference extends Model
     protected $fillable = [
         'name', 'website'
     ];
+
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
 }
