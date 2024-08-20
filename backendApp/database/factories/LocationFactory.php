@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Location;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,7 +22,7 @@ class LocationFactory extends Factory
             'address' => $this->faker->address,
             'city' => 'Belgrade',
             'country' => 'Serbia',
-            'postal_code' => '11000',
+            'postal_code' => '11000.00',
         ];
     }
 }
