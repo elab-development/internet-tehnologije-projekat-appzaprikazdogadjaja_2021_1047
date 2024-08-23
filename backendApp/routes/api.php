@@ -21,6 +21,8 @@ use App\Http\Controllers\ReferenceController;
 
 Route::get('/categories', [CategoryController::class, 'index']);
 
+Route::get('/locations', [LocationController::class, 'index']);
+
 Route::get('/events/stats', [EventController::class, 'statistics']);
 
 Route::get('/events/{id}', [EventController::class, 'show']);
