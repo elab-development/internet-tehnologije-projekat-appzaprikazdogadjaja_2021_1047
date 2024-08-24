@@ -31,6 +31,8 @@ Route::post('/events', [EventController::class, 'store']);
 
 Route::put('/events/{id}', [EventController::class, 'update']);
 
+Route::delete('/events/{id}', [EventController::class, 'destroy']);
+
 Route::get('/events/{id}', [EventController::class, 'show']);
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
