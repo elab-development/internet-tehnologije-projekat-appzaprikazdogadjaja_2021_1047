@@ -27,6 +27,10 @@ Route::get('/events', [EventController::class, 'index']);
 
 Route::get('/events/search', [EventController::class, 'search']); 
 
+Route::post('/events', [EventController::class, 'store']);
+
+Route::put('/events/{id}', [EventController::class, 'update']);
+
 Route::get('/events/{id}', [EventController::class, 'show']);
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use App\Models\Location;
 use App\Models\Category;
+use App\Models\Reference;
 use App\Http\Resources\EventResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -117,6 +118,9 @@ class EventController extends Controller
 
         return EventResource::collection($events);
     }
+
+
+    //Do ovde
 
     public function statistics()
     {
