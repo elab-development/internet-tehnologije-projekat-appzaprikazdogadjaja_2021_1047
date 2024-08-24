@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use App\Http\Resources\RoleResource;
 
 class RoleController extends Controller
 {
@@ -72,6 +74,6 @@ class RoleController extends Controller
         $role = Role::findOrFail($id);
         $role->delete();
 
-        return response()->json(null, 204);
+        return response()->json(['message' => 'Role deleted successfully']);
     }
 }

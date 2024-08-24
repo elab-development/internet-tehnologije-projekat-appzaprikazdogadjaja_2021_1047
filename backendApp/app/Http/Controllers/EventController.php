@@ -120,7 +120,8 @@ class EventController extends Controller
     }
 
 
-    //Do ovde
+    //Do ovog dela treba da se ubaci u dokumentaciju za sad !!!!
+    //ostatak koda se ne ubacuje u dok
 
     public function statistics()
     {

@@ -35,7 +35,7 @@ class LocationController extends Controller
         }
 
         $location = Location::create($validator->validated());
-        return response()->json(new LocationResource($venue), 201);
+        return response()->json(new LocationResource($location), 201);
     }
 
     /**
