@@ -20,54 +20,44 @@ use App\Http\Controllers\ReferenceController;
 |
 */
 
-Route::get('/categories', [CategoryController::class, 'index']);
+Route::post('register', [AuthController::class, 'register']);
+Route::post('login', [AuthController::class, 'login']);
 
+Route::get('/categories', [CategoryController::class, 'index']);
 Route::get('/categories/{id}', [EventController::class, 'show']);
 
-Route::post('/categories', [CategoryController::class, 'store']);
-
-Route::put('/categories/{id}', [CategoryController::class, 'update']);
-
-Route::delete('/categories/{id}', [CategoryController::class, 'destroy']);
-
 Route::get('/locations', [LocationController::class, 'index']);
-
 Route::get('/locations/{id}', [LocationController::class, 'show']);
 
-Route::post('/locations', [LocationController::class, 'store']);
-
-Route::put('/locations/{id}', [LocationController::class, 'update']);
-
-Route::delete('/locations/{id}', [LocationController::class, 'destroy']);
-
 Route::get('/roles', [RoleController::class, 'index']);
-
 Route::get('/roles/{id}', [RoleController::class, 'show']);
-
-Route::post('/roles', [RoleController::class, 'store']);
-
-Route::put('/roles/{id}', [RoleController::class, 'update']);
-
-Route::delete('/roles/{id}', [RoleController::class, 'destroy']);
 
 Route::get('/events', [EventController::class, 'index']);
 
-Route::get('/events/search', [EventController::class, 'search']); 
+Route::middleware(['auth:sanctum' ])->group(function () {
 
-Route::post('/events', [EventController::class, 'store']);
+    Route::post('/events', [EventController::class, 'store']);
+    Route::put('/events/{id}', [EventController::class, 'update']);
+    Route::delete('/events/{id}', [EventController::class, 'destroy']);
+    Route::get('/events/search', [EventController::class, 'search']); 
+    Route::get('/events/{id}', [EventController::class, 'show']);
 
-Route::put('/events/{id}', [EventController::class, 'update']);
+    Route::post('/locations', [LocationController::class, 'store']);
+    Route::put('/locations/{id}', [LocationController::class, 'update']);
+    Route::delete('/locations/{id}', [LocationController::class, 'destroy']);
 
-Route::delete('/events/{id}', [EventController::class, 'destroy']);
+    Route::post('/categories', [CategoryController::class, 'store']);
+    Route::put('/categories/{id}', [CategoryController::class, 'update']);
+    Route::delete('/categories/{id}', [CategoryController::class, 'destroy']);
+    Route::post('logout', [AuthController::class, 'logout']);
 
-Route::get('/events/{id}', [EventController::class, 'show']);
+ });
 
+ Route::middleware(['auth:sanctum','role:admin'])->group(function () {
 
-
-
-
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
+    Route::post('/roles', [RoleController::class, 'store']);
+    Route::put('/roles/{id}', [RoleController::class, 'update']);
+    Route::delete('/roles/{id}', [RoleController::class, 'destroy']);
+ });
 
 
