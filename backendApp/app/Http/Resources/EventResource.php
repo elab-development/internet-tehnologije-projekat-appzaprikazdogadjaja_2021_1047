@@ -2,9 +2,12 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Category;
+use App\Models\Reference;
 use App\Models\Location;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+
 
 class EventResource extends JsonResource
 {

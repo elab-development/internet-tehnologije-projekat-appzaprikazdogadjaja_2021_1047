@@ -23,7 +23,9 @@ Route::get('/categories', [CategoryController::class, 'index']);
 
 Route::get('/locations', [LocationController::class, 'index']);
 
-Route::get('/events/stats', [EventController::class, 'statistics']);
+Route::get('/events', [EventController::class, 'index']);
+
+Route::get('/events/search', [EventController::class, 'search']); 
 
 Route::get('/events/{id}', [EventController::class, 'show']);
 
