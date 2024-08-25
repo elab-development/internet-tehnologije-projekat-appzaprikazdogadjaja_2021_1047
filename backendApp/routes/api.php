@@ -51,13 +51,12 @@ Route::middleware(['auth:sanctum' ])->group(function () {
     Route::delete('/categories/{id}', [CategoryController::class, 'destroy']);
     Route::post('logout', [AuthController::class, 'logout']);
 
- });
-
- Route::middleware(['auth:sanctum','role:admin'])->group(function () {
-
     Route::post('/roles', [RoleController::class, 'store']);
     Route::put('/roles/{id}', [RoleController::class, 'update']);
     Route::delete('/roles/{id}', [RoleController::class, 'destroy']);
+
+    Route::get('myProfile', [AuthController::class, 'myProfile']);
+
  });
 
 

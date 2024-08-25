@@ -87,4 +87,9 @@ class AuthController extends Controller
         // Ako korisnik nije autentifikovan, vratite odgovor sa greškom
         return response()->json(['message' => 'User not authenticated'], 401);
     }
+
+    public function myProfile()
+    {
+        return new UserResource(Auth::user());
+    }
 }
