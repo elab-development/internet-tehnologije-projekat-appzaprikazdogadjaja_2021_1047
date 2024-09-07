@@ -1,0 +1,71 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import './HomePage.css';
+
+const HomePage = () => {
+    const [eventImages, setEventImages] = useState([]);
+    const [categoryImages, setCategoryImages] = useState([]);
+
+    useEffect(() => {
+        const fetchImages = async () => {
+            const eventKeywords = ['concert', 'art exhibition', 'sports event'];
+            const categoryKeywords = ['music', 'art', 'sports'];
+
+            const fetchEventImages = eventKeywords.map((keyword, index) =>
+                axios.get(`https://picsum.photos/400/300?random=${index}`)
+            );
+            const fetchCategoryImages = categoryKeywords.map((keyword, index) =>
+                axios.get(`https://picsum.photos/200/200?random=${index}`)
+            );
+
+            try {
+                const eventResponses = await Promise.all(fetchEventImages);
+                const categoryResponses = await Promise.all(fetchCategoryImages);
+
+                setEventImages(eventResponses.map(response => response.request.responseURL));
+                setCategoryImages(categoryResponses.map(response => response.request.responseURL));
+            } catch (error) {
+                console.error('Error fetching images from Lorem Picsum API', error);
+            }
+        };
+
+        fetchImages();
+    }, []);
+
+    return (
+        <div className="homepage">
+            <header className="header">
+                <h1>Welcome to Belgrade Events</h1>
+                <p>Discover the best events happening in Belgrade</p>
+            </header>
+            <section className="events-highlight">
+                <h2>Upcoming Events</h2>
+                <div className="event-cards">
+                    {eventImages.map((image, index) => (
+                        <div className="event-card" key={index}>
+                            <img src={image} alt={`Event ${index + 1}`} />
+                            <h3>Event Title {index + 1}</h3>
+                            <p>Event description goes here.</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+            <section className="categories">
+                <h2>Categories</h2>
+                <div className="category-cards">
+                    {categoryImages.map((image, index) => (
+                        <div className="category-card" key={index}>
+                            <img src={image} alt={`Category ${index + 1}`} />
+                            <h3>{['Music', 'Art', 'Sports'][index]}</h3>
+                        </div>
+                    ))}
+                </div>
+            </section>
+            <footer className="footer">
+                <p>© 2024 Belgrade Events. All rights reserved.</p>
+            </footer>
+        </div>
+    );
+};
+
+export default HomePage;
