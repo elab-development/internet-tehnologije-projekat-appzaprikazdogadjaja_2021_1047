@@ -9,12 +9,13 @@ body {
 }
 
 h2 {
-    background-color: #87a98b;
+    background-color: #302A40;
     border-radius: 50px;
     color: aliceblue;
     width: 250px;
     margin: auto;
     margin-bottom: 15px;
+    opacity: 0.9;
 }
 
 .homepage {
@@ -23,8 +24,9 @@ h2 {
 }
 
 .header {
-    background-color: #61985f;
+    background-color: #302A40;
     padding: 20px;
+    box-shadow: 0px 10px 15px 0px #5FBCA5;
 }
 
 .header h1 {
@@ -49,8 +51,13 @@ h2 {
     gap: 20px;
 }
 
+.event-cards {
+    margin-bottom: 10px;
+}
+
 .footer {
-    background-color: #61985f;
+    background-color: #302A40;
     color: #fff;
     padding: 10px;
+    box-shadow: 0px 0px 15px 3px #5FBCA5;
 }

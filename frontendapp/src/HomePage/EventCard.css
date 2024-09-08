@@ -1,17 +1,20 @@
 .event-card {
-    background-color: #87a98b;
-    border: 2pt solid rgb(60, 141, 57);
+    background-color: #B25D4B;
+    border: 2pt solid #A03D2D;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 300px;
     text-align: left;
+    opacity: 0.7;
     color: #fff;
 }
 
 .event-card:hover{
-    box-shadow: 0px 0px 15px 0px rgb(60, 141, 57);
+    box-shadow: 0px 0px 15px 3px #B25D4B;
     cursor: pointer;
+    opacity: 1;
+    transition: 1s;
 }
 
 .event-card img {

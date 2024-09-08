@@ -1,12 +1,9 @@
-/* Navbar.css */
-/* Colors: #dcd6f7, #a6b1e1, #b4869f, #985f6f, #4e4c67 */
-
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #4e4c67;
-    padding: 10px 20px;
+    background-color: #1D1922;
+    padding: 15px 40px;
     color: #fff;
 }
 
@@ -14,6 +11,12 @@
     font-size: 1.5rem;
     text-decoration: none;
     color: #dcd6f7;
+    transition: 0.5s;
+}
+
+.navbar-brand a:hover {
+    color: #5FBCA5;
+    transition: 0.5s;
 }
 
 .navbar-links {
@@ -34,5 +37,6 @@
 }
 
 .navbar-links a:hover {
-    color: #a6b1e1;
+    color: #5FBCA5;
+    transition: 0.5s;
 }

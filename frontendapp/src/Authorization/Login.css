@@ -6,7 +6,7 @@
 }
 
 .login-container {
-    background-color: #cae1a6;
+    background-color: rgba(154, 189, 209, 0.6);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -43,7 +43,7 @@
 }
 
 button {
-    background-color: #60985f;
+    background-color: #B25D4B;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -54,5 +54,5 @@ button {
 }
 
 button:hover {
-    background-color: #b1b486;
+    background-color: #5FBCA5;
 }

@@ -4,8 +4,8 @@ import './EventCard.css';
 const EventCard = ({ image, title, description }) => {
     return (
         <div className="event-card">
-            <img src={image} alt={title} />
             <h3>{title}</h3>
+            <img src={image} alt={title} />
             <p>{description}</p>
         </div>
     );
