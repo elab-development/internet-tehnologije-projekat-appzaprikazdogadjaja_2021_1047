@@ -1,0 +1,11 @@
+.events {
+    padding: 20px;
+    text-align: center;
+}
+
+.events-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}

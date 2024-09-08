@@ -6,6 +6,7 @@ import Register from './Authorization/Register';
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Navigation/Navbar';
+import Events from './Events/Events';
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login onLogin={handleLogin} />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/events" element={<Events />} />
         </Routes>
       </div>
     </Router>

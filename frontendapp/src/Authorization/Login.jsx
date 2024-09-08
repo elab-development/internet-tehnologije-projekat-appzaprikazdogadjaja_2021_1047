@@ -3,7 +3,7 @@ import axios from 'axios';
 import './Login.css';
 
 const Login = ({ onLogin }) => {
-    const [email, setEmail] = useState('johann33@example.com');
+    const [email, setEmail] = useState('irutherford@example.org');
     const [password, setPassword] = useState('password');
     const [error, setError] = useState('');
 

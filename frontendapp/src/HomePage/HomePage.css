@@ -30,7 +30,7 @@ h2 {
     margin: 0 auto;
     letter-spacing: 0.05em; 
     animation: typing 5s steps(80, end), blink-caret 0.75s step-end infinite;
-    font-size: 52px; 
+    font-size: 42px; 
     font-family: Arial, sans-serif; 
     margin-top: 100px;
     margin-bottom: 100px;

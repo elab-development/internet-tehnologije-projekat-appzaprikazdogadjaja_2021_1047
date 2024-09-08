@@ -21,7 +21,7 @@ const Register = () => {
                 password_confirmation: passwordConfirmation,
             });
             console.log('Registration successful:', response.data);
-            // Handle successful registration (e.g., redirect, notify user, etc.)
+            alert('Registration successful!');
         } catch (err) {
             console.error('Registration failed:', err.response.data);
             setError('Registration failed. Please check your input and try again.');
