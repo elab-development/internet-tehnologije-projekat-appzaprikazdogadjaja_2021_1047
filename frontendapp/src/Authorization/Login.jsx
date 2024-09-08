@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Login.css';
 
@@ -6,7 +7,7 @@ const Login = ({ onLogin }) => {
     const [email, setEmail] = useState('irutherford@example.org');
     const [password, setPassword] = useState('password');
     const [error, setError] = useState('');
-
+    const navigate= useNavigate();
     const handleLogin = async (e) => {
         e.preventDefault();
         setError('');
@@ -18,6 +19,7 @@ const Login = ({ onLogin }) => {
             });
             console.log('Login successful:', response.data);
             onLogin(response.data.user,response.data.access_token);
+            navigate("/events")
         } catch (err) {
             console.error('Login failed:', err.response.data);
             setError('Invalid credentials. Please try again.');

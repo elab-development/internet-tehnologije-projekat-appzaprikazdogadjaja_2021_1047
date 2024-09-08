@@ -7,6 +7,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Navigation/Navbar';
 import Events from './Events/Events';
+import CreateEvent from './Events/CreateEvent';
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
           <Route path="/login" element={<Login onLogin={handleLogin} />} />
           <Route path="/register" element={<Register />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/events/create" element={<CreateEvent />} />
         </Routes>
       </div>
     </Router>
