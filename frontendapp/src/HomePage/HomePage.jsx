@@ -40,6 +40,9 @@ const HomePage = () => {
                 <h1>Belgrade Events 2024</h1>
                 <p>Discover the best events happening in Belgrade</p>
             </header>
+            <section className='welcome'>
+                <h1>One place for all events</h1>
+            </section>
             <section className="categories">
                 <h2>Event Categories</h2>
                 <div className="category-cards">

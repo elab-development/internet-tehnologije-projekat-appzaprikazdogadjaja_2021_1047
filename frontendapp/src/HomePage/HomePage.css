@@ -23,6 +23,33 @@ h2 {
     color: #4e4c67;
 }
 
+.welcome h1 {
+    overflow: hidden;
+    border-right: 0.1em solid orange; 
+    white-space: nowrap; 
+    margin: 0 auto;
+    letter-spacing: 0.05em; 
+    animation: typing 5s steps(80, end), blink-caret 0.75s step-end infinite;
+    font-size: 52px; 
+    font-family: Arial, sans-serif; 
+    margin-top: 100px;
+    margin-bottom: 100px;
+    color: #B25D4B;
+    opacity: 0.8;
+}
+
+
+@keyframes typing {
+    from { width: 0; } 
+    to { width: 100%; } 
+}
+
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: transparent; }
+}
+
 .header {
     background-color: #302A40;
     padding: 20px;
@@ -52,7 +79,7 @@ h2 {
 }
 
 .event-cards {
-    margin-bottom: 10px;
+    margin-bottom: 50px;
 }
 
 .footer {
