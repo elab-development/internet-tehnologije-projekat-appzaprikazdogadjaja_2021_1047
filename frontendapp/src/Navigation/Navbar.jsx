@@ -1,8 +1,28 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ user, onLogout }) => {
+    const navigate = useNavigate();
+
+    const handleLogout = async () => {
+        try {
+            const token = sessionStorage.getItem('access_token');
+            await axios.post('http://localhost:8000/api/logout', {}, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+
+            onLogout();
+            sessionStorage.removeItem('user');
+            sessionStorage.removeItem('access_token');
+            navigate('/login');
+        } catch (error) {
+            console.error('Logout failed:', error);
+        }
+    };
     return (
         <nav className="navbar">
             <div className="navbar-brand">
@@ -12,12 +32,25 @@ const Navbar = () => {
                 <li>
                     <Link to="/">Home</Link>
                 </li>
-                <li>
-                    <Link to="/login">Login</Link>
-                </li>
-                <li>
-                    <Link to="/register">Register</Link>
-                </li>
+                {!user ? (
+                    <>
+                        <li>
+                            <Link to="/login">Login</Link>
+                        </li>
+                        <li>
+                            <Link to="/register">Register</Link>
+                        </li>
+                    </>
+                ) : (
+                    <>
+                        <li>
+                            <span>Welcome, {user.name}</span>
+                        </li>
+                        <li>
+                            <button onClick={handleLogout}>Logout</button>
+                        </li>
+                    </>
+                )}
             </ul>
         </nav>
     );
