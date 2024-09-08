@@ -55,7 +55,7 @@ const CreateEvent = () => {
             <div className="create-event-container">
                 <h2>Create Event</h2>
                 <form onSubmit={handleSubmit}>
-                    <div className="form-group">
+                    <div className="form-group2">
                         <label htmlFor="title">Title</label>
                         <input
                             type="text"
@@ -65,7 +65,7 @@ const CreateEvent = () => {
                             required
                         />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group2">
                         <label htmlFor="description">Description</label>
                         <input
                             type="text"
@@ -74,7 +74,7 @@ const CreateEvent = () => {
                             onChange={(e) => setDescription(e.target.value)}
                         />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group2">
                         <label htmlFor="startDate">Start Date</label>
                         <input
                             type="date"
@@ -84,7 +84,7 @@ const CreateEvent = () => {
                             required
                         />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group2">
                         <label htmlFor="endDate">End Date</label>
                         <input
                             type="date"
@@ -94,7 +94,7 @@ const CreateEvent = () => {
                             required
                         />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group2">
                         <label htmlFor="locationId">Location</label>
                         <select
                             id="locationId"
@@ -110,7 +110,7 @@ const CreateEvent = () => {
                             ))}
                         </select>
                     </div>
-                    <div className="form-group">
+                    <div className="form-group2">
                         <label htmlFor="categoryId">Category</label>
                         <select
                             id="categoryId"
@@ -126,7 +126,7 @@ const CreateEvent = () => {
                             ))}
                         </select>
                     </div>
-                    <div className="form-group">
+                    <div className="form-group2">
                         <label htmlFor="url">URL</label>
                         <input
                             type="url"
@@ -136,7 +136,7 @@ const CreateEvent = () => {
                             required
                         />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group2">
                         <label htmlFor="image">Image URL</label>
                         <input
                             type="url"

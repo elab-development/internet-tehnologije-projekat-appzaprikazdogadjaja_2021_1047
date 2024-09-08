@@ -12,32 +12,28 @@
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 500px;
+    width: 100vh;
     color: #4e4c67;
     animation: slide-in2 1s ease-out forwards;
 }
 
 @keyframes slide-in2 {
     from { left: -100%; }
-    to { left: 33%; }
+    to { left: 26%; }
 }
 
-.create-event-container h2 {
-    margin-bottom: 20px;
+.form-group2 {
+    margin-bottom: 3px;
 }
 
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
+.form-group2 label {
     display: block;
     margin-bottom: 5px;
     color: #4e4c67;
 }
 
-.form-group input,
-.form-group select {
+.form-group2 input,
+.form-group2 select {
     width: 70%;
     padding: 10px;
     border: none;
@@ -54,6 +50,8 @@ button {
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
+    margin-top: 20px;
+    width: 73%;
 }
 
 button:hover {
