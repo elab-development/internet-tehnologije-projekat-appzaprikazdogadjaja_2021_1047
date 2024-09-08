@@ -74,7 +74,7 @@ const Register = () => {
                         />
                     </div>
                     {error && <p className="error">{error}</p>}
-                    <button type="submit">Register</button>
+                    <button className='buttonRegister' type="submit">Register</button>
                 </form>
             </div>
         </div>

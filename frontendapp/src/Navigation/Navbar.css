@@ -40,3 +40,14 @@
     color: #5FBCA5;
     transition: 0.5s;
 }
+
+button {
+    background-color: #B25D4B;
+    color: #fff;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}

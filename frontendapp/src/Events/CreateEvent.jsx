@@ -145,7 +145,7 @@ const CreateEvent = () => {
                             onChange={(e) => setImage(e.target.value)}
                         />
                     </div>
-                    <button type="submit">Create Event</button>
+                    <button className='buttonCreateEvent' type="submit">Create Event</button>
                 </form>
             </div>
         </div>
