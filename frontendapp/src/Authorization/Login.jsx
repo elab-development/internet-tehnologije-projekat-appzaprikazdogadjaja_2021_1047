@@ -4,7 +4,7 @@ import axios from 'axios';
 import './Login.css';
 
 const Login = ({ onLogin }) => {
-    const [email, setEmail] = useState('lavon73@example.com');
+    const [email, setEmail] = useState('liza.wilkinson@example.net');
     const [password, setPassword] = useState('password');
     const [error, setError] = useState('');
     const navigate= useNavigate();

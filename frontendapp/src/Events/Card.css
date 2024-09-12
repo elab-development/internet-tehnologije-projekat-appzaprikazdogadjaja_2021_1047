@@ -34,3 +34,14 @@
     margin: 5px 0;
     color: #fff;
 }
+
+.delete-button {
+    background-color: #ac2323;
+    color: #fff;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}

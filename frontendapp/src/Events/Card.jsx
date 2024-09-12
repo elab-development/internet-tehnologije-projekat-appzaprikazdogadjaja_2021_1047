@@ -1,9 +1,27 @@
 import React from 'react';
 import './Card.css';
+import axios from 'axios';
+import { FaTrashCan } from "react-icons/fa6";
 
-const Card = ({ event }) => {
+const Card = ({ event, onDelete }) => {
+   
+    const handleDelete = async () => {
+        const token = sessionStorage.getItem('access_token');
+        try {
+            await axios.delete(`http://127.0.0.1:8000/api/events/${event.id}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            onDelete(event.id);
+        } catch (err) {
+            console.error('Error deleting event:', err);
+        }
+    };
+
     return (
         <div className="events-card">
+            <button onClick={handleDelete} className="delete-button"><FaTrashCan/></button>
             <h3>{event.title}</h3>
             {event.image && <img src={event.image} alt={event.title} />}
             <p>{event.description}</p>

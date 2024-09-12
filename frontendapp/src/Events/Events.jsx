@@ -5,7 +5,7 @@ import Card from './Card';
 import ReactPaginate from 'react-paginate';
 
 const Events = () => {
-    const { events, loading, error } = UseEvents();
+    const { events, setEvents,  loading, error } = UseEvents();
     const [currentPage, setCurrentPage] = useState(0);
     const [filter, setFilter] = useState('');
     const eventsPerPage = 6;
@@ -17,6 +17,10 @@ const Events = () => {
     const handleFilterChange = (e) => {
         setFilter(e.target.value);
         setCurrentPage(0);
+    };
+
+    const handleDeleteEvent = (id) => {
+        setEvents(prevEvents => prevEvents.filter(event => event.id !== id));
     };
 
     const filteredEvents = events.filter(event =>
@@ -43,7 +47,7 @@ const Events = () => {
             />
             <div className="events-list">
                  {currentEvents.map((event) => (
-                    <Card key={event.id} event={event} />
+                    <Card key={event.id} event={event} onDelete={handleDeleteEvent} />
                 ))}
             </div>
             <ReactPaginate
