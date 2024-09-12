@@ -65,3 +65,17 @@
 button:hover {
     background-color: #5FBCA5;
 }
+
+.forgot-pass-label-div{
+    margin-top: 15px;
+}
+
+.forgot-pass-label:hover{
+    cursor: pointer;
+    color: #fff;
+    transition: 0.6s;
+}
+
+.back-to-login-button-div{
+    margin-top: 15px;
+}
