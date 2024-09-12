@@ -3,12 +3,14 @@ import './Events.css';
 import UseEvents from '../Hooks/UseEvents';
 import Card from './Card';
 import ReactPaginate from 'react-paginate';
+import { useNavigate } from 'react-router-dom';
 
 const Events = () => {
     const { events, setEvents,  loading, error } = UseEvents();
     const [currentPage, setCurrentPage] = useState(0);
     const [filter, setFilter] = useState('');
     const eventsPerPage = 6;
+    const navigate = useNavigate();
 
     const handlePageClick = (data) => {
         setCurrentPage(data.selected);
@@ -27,6 +29,10 @@ const Events = () => {
         event.title.toLowerCase().includes(filter.toLowerCase()) ||
         event.description.toLowerCase().includes(filter.toLowerCase())
     );
+
+    const handleEditEvent = (id) => {
+        navigate(`/edit-event/${id}`);
+    };
 
     const pageCount = Math.ceil(filteredEvents.length / eventsPerPage);
     const offset = currentPage * eventsPerPage;
@@ -47,7 +53,7 @@ const Events = () => {
             />
             <div className="events-list">
                  {currentEvents.map((event) => (
-                    <Card key={event.id} event={event} onDelete={handleDeleteEvent} />
+                    <Card key={event.id} event={event} onDelete={handleDeleteEvent} onEdit={handleEditEvent}/>
                 ))}
             </div>
             <ReactPaginate
