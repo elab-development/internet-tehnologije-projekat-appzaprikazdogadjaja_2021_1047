@@ -4,7 +4,7 @@ import axios from 'axios';
 import { FaTrashCan } from "react-icons/fa6";
 import { MdEdit } from "react-icons/md";
 
-const Card = ({ event, onDelete, onEdit }) => {
+const Card = ({ event, onDelete, onEdit, user }) => {
    
     const handleDelete = async () => {
         const token = sessionStorage.getItem('access_token');
@@ -20,10 +20,16 @@ const Card = ({ event, onDelete, onEdit }) => {
         }
     };
 
+    const isAdmin = user?.roles?.some(role => role.id === 1);
+
     return (
         <div className="events-card">
-            <button onClick={handleDelete} className="delete-button"><FaTrashCan/></button>
-            <button onClick={() => onEdit(event.id)} className="edit-button"><MdEdit/></button>
+            {isAdmin && (
+                <>
+                    <button onClick={handleDelete} className="delete-button"><FaTrashCan/></button>
+                    <button onClick={() => onEdit(event.id)} className="edit-button"><MdEdit/></button>
+                </>
+            )}
             <h3>{event.title}</h3>
             {event.image && <img src={event.image} alt={event.title} />}
             <p>{event.description}</p>

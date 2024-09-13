@@ -5,7 +5,7 @@ import Card from './Card';
 import ReactPaginate from 'react-paginate';
 import { useNavigate } from 'react-router-dom';
 
-const Events = () => {
+const Events = ({ user }) => {
     const { events, setEvents,  loading, error } = UseEvents();
     const [currentPage, setCurrentPage] = useState(0);
     const [filter, setFilter] = useState('');
@@ -53,7 +53,7 @@ const Events = () => {
             />
             <div className="events-list">
                  {currentEvents.map((event) => (
-                    <Card key={event.id} event={event} onDelete={handleDeleteEvent} onEdit={handleEditEvent}/>
+                    <Card key={event.id} event={event} onDelete={handleDeleteEvent} onEdit={handleEditEvent} user={user}/>
                 ))}
             </div>
             <ReactPaginate

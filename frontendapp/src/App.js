@@ -41,7 +41,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login onLogin={handleLogin} />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/events" element={<Events />} />
+          <Route path="/events" element={<Events user={user} />} />
           <Route path="/events/create" element={<CreateEvent />} />
 
           <Route path="/edit-event/:id" element={<CreateEvent />} />
