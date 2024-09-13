@@ -1,0 +1,26 @@
+.admin-users {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.admin-users table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    height: 100vh;
+}
+
+.admin-users th, .admin-users td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.admin-users th {
+    background-color: #B25D4B;
+    color: white;
+}
+
+.admin-users tr:nth-child(even) {
+    background-color: rgba(205, 216, 222, 0.6);
+}

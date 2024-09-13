@@ -37,13 +37,13 @@ Route::get('/events', [EventController::class, 'index']);
 
 Route::middleware(['auth:sanctum','role:admin'])->group(function (){
     Route::put('/events/{id}', [EventController::class, 'update']);
+    Route::delete('/events/{id}', [EventController::class, 'destroy']);
+    Route::get('/users', [AuthController::class, 'allUsers']);
 });
 
 Route::middleware(['auth:sanctum' ])->group(function () {
 
     Route::post('/events', [EventController::class, 'store']);
-    
-    Route::delete('/events/{id}', [EventController::class, 'destroy']);
     Route::get('/events/search', [EventController::class, 'search']); 
     Route::get('/events/{id}', [EventController::class, 'show']);
 

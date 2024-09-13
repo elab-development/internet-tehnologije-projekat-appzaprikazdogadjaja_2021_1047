@@ -23,6 +23,9 @@ const Navbar = ({ user, onLogout }) => {
             console.error('Logout failed:', error);
         }
     };
+
+    const isAdmin = user?.roles?.some(role => role.id === 1);
+
     return (
         <nav className="navbar">
             <div className="navbar-brand">
@@ -41,6 +44,24 @@ const Navbar = ({ user, onLogout }) => {
                             <Link to="/register">Register</Link>
                         </li>
                     </>
+                    ) : isAdmin ? (
+                        <>
+                            <li>
+                                <Link to="/admin/users">Users</Link>
+                            </li>
+                            <li>
+                            <Link to="/events">Events</Link>
+                            </li>
+                            <li>
+                                <Link to="/events/create">Create</Link>
+                            </li>
+                            <li>
+                                <span>Welcome, {user.name}</span>
+                            </li>
+                            <li>
+                                <button className='logout-button' onClick={handleLogout}>Logout</button>
+                            </li>
+                        </>
                 ) : (
                     <>
                         <li>

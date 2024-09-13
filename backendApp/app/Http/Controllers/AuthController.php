@@ -115,4 +115,10 @@ class AuthController extends Controller
 
         return response()->json(['message' => 'Password reset successfully'], 200);
     }
+
+    public function allUsers()
+    {
+        $users = User::all();
+        return UserResource::collection($users);
+    }
 }

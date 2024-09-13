@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Navigation/Navbar';
 import Events from './Events/Events';
 import CreateEvent from './Events/CreateEvent';
+import AdminUsers from './Admin/AdminUsers';
 
 function App() {
 
@@ -33,6 +34,8 @@ function App() {
     sessionStorage.removeItem('access_token');
   };
 
+  const isAdmin = user?.roles?.some(role => role.id === 1);
+
   return (
     <Router>
       <div className="App">
@@ -42,8 +45,10 @@ function App() {
           <Route path="/login" element={<Login onLogin={handleLogin} />} />
           <Route path="/register" element={<Register />} />
           <Route path="/events" element={<Events user={user} />} />
+          {isAdmin && (
+                <Route path="/admin/users" element={<AdminUsers />} />
+            )}
           <Route path="/events/create" element={<CreateEvent />} />
-
           <Route path="/edit-event/:id" element={<CreateEvent />} />
         </Routes>
       </div>
