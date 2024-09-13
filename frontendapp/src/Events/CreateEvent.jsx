@@ -190,7 +190,7 @@ const CreateEvent = () => {
                             onChange={(e) => setImage(e.target.value)}
                         />
                     </div>
-                    <button type="submit">{isEditing ? 'Update Event' : 'Create Event'}</button>
+                    <button className='buttonCreateUpdateEvent' type="submit">{isEditing ? 'Update Event' : 'Create Event'}</button>
                 </form>
             </div>
         </div>

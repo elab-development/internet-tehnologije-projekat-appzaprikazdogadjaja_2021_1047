@@ -53,7 +53,7 @@ const Navbar = ({ user, onLogout }) => {
                             <span>Welcome, {user.name}</span>
                         </li>
                         <li>
-                            <button onClick={handleLogout}>Logout</button>
+                            <button className='logout-button' onClick={handleLogout}>Logout</button>
                         </li>
                     </>
                 )}
